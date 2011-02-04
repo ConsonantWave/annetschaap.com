@@ -1,0 +1,50 @@
+<% title h(@gallery.name) %>
+<% back_link @category.name, @category %>
+
+<% content_for :breadcrumb do %>
+&gt; <%= link_to @category.name, @category %>
+&gt; <%=h @gallery.name %>
+<% end %>
+
+<script type="text/javascript">
+$(function() {<% @illustrations.each do |ill| %>
+  $('img.ill_<%= ill.id.to_s %>').data('ad-title', '<%= ill.name.gsub("'", "\\'") %>');
+  $('img.ill_<%= ill.id.to_s %>').data('ad-desc', '<%= link_to "See more", ill %>');<% end %>
+  var galleries = $('.ad-gallery').adGallery({
+    loader_image: '/images/loading.gif',
+    animate_first_image: true,
+    animation_speed: 600,
+    display_next_and_prev: true,
+    display_back_and_forward: true,
+    slideshow: {
+      enable: false
+    }
+  });
+});
+</script>
+
+<div id="gallery" class="ad-gallery">
+  <div class="ad-image-wrapper">
+  </div>
+  <div class="ad-nav">
+    <div class="ad-thumbs">
+      <ul class="ad-thumb-list">
+      <% @illustrations.each do |ill| %>
+        <li>
+          <%= link_to image_tag(ill.image.url(:thumb),
+                                :class => "ill_" + ill.id.to_s),
+          ill.image.url(:gallery) %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ul>
+
+</ul>
+
+<div>
+  <%= parse_text @gallery.description %>
+</div>

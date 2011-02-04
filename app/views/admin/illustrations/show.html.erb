@@ -1,0 +1,13 @@
+<% title h(@illustration.name) %>
+
+<% content_for :breadcrumb do %>
+&gt; <%= link_to @category.name, [:admin, @category] %>
+&gt; <%= link_to @gallery.name, [:admin, @gallery] %>
+&gt; <%=h @illustration.name %>
+(<%= link_to 'Edit', edit_admin_illustration_path(@illustration) %>)
+<% end %>
+
+<p>Thumbnail: <%= image_tag @illustration.image.url(:thumb) %></p>
+<p>Gallery: <%= image_tag @illustration.image.url(:gallery) %></p>
+<p>Page: <%= image_tag @illustration.image.url(:page) %></p>
+<p>Original <%= image_tag @illustration.image.url(:original) %></p>

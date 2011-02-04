@@ -1,0 +1,10 @@
+<% content_for :breadcrumb do %>
+&gt; New Category
+<% end %>
+
+<h1>New category</h1>
+
+<% form_for [:admin, @category], :html => { :multipart => true } do |f| %>
+  <%= render :partial => 'form', :object => f, :locals => {
+      :button_label => "Create" } %>
+<% end %>

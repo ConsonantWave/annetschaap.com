@@ -1,0 +1,54 @@
+<p><%= form.error_messages %></p>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>English</th>
+    <th>Dutch</th>
+  </tr>
+  <tr>
+    <td><%= form.label :name %></td>
+    <td><%= form.text_field :name_en %></td>
+    <td><%= form.text_field :name_nl %></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <br />
+      <p>The icon is the link to the gallery that appears on the category page.
+      <br />Keep icons to 100x100 pixels.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><%= form.label :icon %></td>
+    <td><%= form.file_field :icon_en %></td>
+    <td><%= form.file_field :icon_nl %></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <br />
+      <%= render :partial => "admin/shared/parsing_help" %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= form.label :description %></td>
+    <td><%= form.text_area :description_en %></td>
+    <td><%= form.text_area :description_nl %></td>
+  </tr>
+  <tr>
+    <td><%= form.label :year %></td>
+    <td colspan="2"><%= form.text_field :year %></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <br />
+      <p>Edit <%= link_to "available licenses", admin_licenses_url %></p>
+    </td>
+  </tr>
+  <tr>
+    <td><%= form.label :license %></td>
+    <td colspan="2"><%= form.collection_select :license_id, licenses,
+      :id, :name, { :prompt => 'Please select a license' } %></td>
+  </tr>
+  <tr>
+    <td colspan="3"><%= form.submit button_label %></td>
+  </tr>
+</table>

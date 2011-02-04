@@ -1,0 +1,126 @@
+/*
+annet.css
+2010/04/19, SZA
+*/
+
+body {
+   background: #67CCC6 center top;
+   font-family: 'Gentium Basic', serif;
+   font-size: 14pt;
+}
+
+#contentbox {
+   margin: 0 auto;
+   width: 988px; /* width - 12 (for border */
+   max-height: 708px; /* height - 12 (for border) */
+   min-height: 708px;
+   border: 5pt #AEF5EF solid;
+}
+
+#content {
+   height: 664px;
+   overflow: auto;
+   padding: 10px 10px 0 10px;
+}
+
+#content * {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contentfooter {
+   color: #F14783;
+   background: #67CCC6;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+#contentfooter h1 {
+    text-align: center;
+}
+
+#contentfooter:hover {
+   background: #AEF5EF;
+}
+
+#contentfooter a {
+   color: #F14783;
+   text-decoration: none;    
+}
+
+#content .breadcrumb {
+    text-align: left;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.floatingBox {
+   border: solid 2px #AEF5EF;
+   background-color: #67CCC6;
+   padding: 5px;
+   font-size: small;
+}
+
+.relative {
+    position: relative;
+}
+
+#content .illBox {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: left;
+    opacity: .75;
+}
+
+#content .illBox * {
+   text-align: left;
+}
+
+#content .illBox p {
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
+
+a {
+   color: #000080;
+}
+
+#content p, #content blockquote, #content ul, #content ol {
+   margin-bottom: 16px;
+   line-height: 2.4ex;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+   font-weight: bold;
+   margin-bottom: 16px;
+   color: #4ECA65;
+   background-color: #AEF5EF;
+   padding: .2em;
+}
+
+#content .inlineList li {
+   display: inline;
+}
+
+h1 {
+   font-size: 18pt;
+}
+
+h2 {
+   font-size: 16pt;
+}
+
+table {
+   margin: 0 0 16px 0;
+}
+
+td {
+   padding: 0 5px 0 0;
+   vertical-align: top;
+}
+
+th {
+   padding: 0 5px 5px 0;
+}

@@ -1,0 +1,55 @@
+/*
+annet.css
+2010/04/19, SZA
+*/
+
+body {
+   background: #67CCC6 center top;
+   font-family: 'Gentium Basic', serif;
+   font-size: 14pt;
+}
+
+#contentbox {
+   margin: 0 auto;
+   padding: 10px;
+   width: 988px; /* width - 12 (for border */
+   border: 5pt #AEF5EF solid;
+}
+
+a {
+   color: #000080;
+}
+
+p, blockquote, ul, ol {
+   margin-bottom: 16px;
+   line-height: 2.4ex;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-weight: bold;
+   margin-bottom: 16px;
+   color: #4ECA65;
+   background-color: #AEF5EF;
+   padding: .2em;
+}
+
+h1 {
+   font-size: 18pt;
+}
+
+h2 {
+   font-size: 16pt;
+}
+
+table {
+   margin: 0 0 16px 0;
+}
+
+td {
+   padding: 0 5px 0 0;
+   vertical-align: top;
+}
+
+th {
+   padding: 0 5px 5px 0;
+}

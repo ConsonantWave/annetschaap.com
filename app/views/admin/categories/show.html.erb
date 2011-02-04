@@ -1,0 +1,24 @@
+<% title h(@category.name) %>
+
+<% content_for :breadcrumb do %>
+&gt; <%=h @category.name %> (<%= link_to 'Edit', edit_admin_category_path(@category) %>)
+<% end %>
+
+<p>
+  <%= image_tag @category.image.url %>
+</p>
+
+<div>
+  <%= parse_text @category.content %>
+</div>
+
+<h2>List of Galleries:</h2>
+<ul>
+  <% @category.galleries.each do |gallery| %>
+  <li><%= link_to gallery.name, [:admin, gallery] %>
+  - <%= link_to "Edit", edit_admin_gallery_path(gallery) %>
+  - <%= link_to "Delete", [:admin, gallery], :method => "delete",
+    :confirm => "Are you sure you want to delete " + gallery.name + "?" %> </li>
+  <% end %>
+  <li><%= link_to 'New Gallery', new_admin_category_gallery_path(@category) %></li>
+</ul>

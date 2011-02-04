@@ -1,0 +1,51 @@
+<% title "Editing " + h(@illustration.name) %>
+
+<% content_for :breadcrumb do %>
+&gt; <%= link_to @category.name, [:admin, @category] %>
+&gt; <%= link_to @gallery.name, [:admin, @gallery] %>
+&gt; <%= link_to @illustration.name, [:admin, @illustration] %>
+&gt; Edit
+<% end %>
+
+<% form_for [:admin, @illustration], :html => { :multipart => true } do |f| %>
+  <p><%= f.error_messages %></p>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>English</th>
+      <th>Dutch</th>
+    </tr>
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name_en %></td>
+      <td><%= f.text_field :name_nl %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :image %></td>
+      <td colspan="2"><%= f.file_field :image %></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <%= render :partial => "admin/shared/parsing_help" %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label :comment %></td>
+      <td><%= f.text_area :comment_en %></td>
+      <td><%= f.text_area :comment_nl %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :year %></td>
+      <td colspan="2"><%= f.text_field :year %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :license %></td>
+      <td colspan="2"><%= f.collection_select :license_id, @licenses,
+        :id, :name, { :prompt => 'Please select a license' } %></td>
+    </tr>
+    <tr>
+      <td colspan="3"><%= f.submit "Update" %></td>
+    </tr>
+  </table>
+<% end %>

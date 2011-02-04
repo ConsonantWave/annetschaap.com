@@ -1,0 +1,13 @@
+<% title "Editing " + h(@gallery.name) %>
+
+<% content_for :breadcrumb do %>
+&gt; <%= link_to @category.name, [:admin, @category] %>
+&gt; <%= link_to @gallery.name, [:admin, @gallery] %>
+&gt; Edit
+<% end %>
+
+<% form_for [:admin, @gallery], :html => { :multipart => true } do |f| %>
+  <%= render :partial => 'form', :object => f, :locals => {
+      :licenses => @licenses,
+      :button_label => "Update" } %>
+<% end %>

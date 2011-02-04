@@ -1,0 +1,24 @@
+<% title h(@illustration.name) %>
+<% back_link @gallery.name, @gallery %>
+
+<% content_for :breadcrumb do %>
+&gt; <%= link_to @category.name, @category %>
+&gt; <%= link_to @gallery.name, @gallery %>
+&gt; <%=h @illustration.name %>
+<% end %>
+
+<div class="relative">
+  <p>
+    <% unless @previous.nil? %>
+    <%= link_to @previous.name, @previous %> &lt;
+    <% end %>
+    <strong><%= @illustration.name %></strong>
+    <% unless @next.nil? %>
+    &gt; <%= link_to @next.name, @next %>
+    <% end %>
+  </p>
+  <% unless @illustration.comment.nil? %>
+  <%= parse_text @illustration.comment %>
+  <% end %>
+  <%= image_tag @illustration.image.url(:page) %>
+</div>

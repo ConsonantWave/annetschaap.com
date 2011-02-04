@@ -1,0 +1,180 @@
+/*
+annet.css
+2010/04/19, SZA
+*/
+
+body {
+   background: #67CCC6 center top;
+   font-family: 'Gentium Basic', serif;
+   font-size: 14pt;
+   margin: 0;
+   text-align: center;
+}
+
+.floatingBox {
+   border: solid 2px #AEF5EF;
+   background-color: #67CCC6;
+   padding: 5px;
+   font-size: small;
+}
+
+/* main image stuff */
+
+#bgwrapper {
+   margin: 0 auto;
+   position: relative;
+   width: 1000px;
+}
+
+#loginBox {
+   position: absolute;
+   top: 0px;
+   right: 0px;
+}
+
+#loader {
+   display: none;
+   position: absolute;
+   top: 350px;
+   left: 460px;
+   width: 80px;
+   z-index: 200;
+}
+
+/* content box stuff */
+
+#contentwrapper {
+   position: absolute;
+   width: 1000px;
+   top: -900px;
+}
+
+#contentbox {
+   background: #67CCC6;
+   border: 5pt #AEF5EF solid;
+   max-height: 708px; /* height - 12 (for border) */
+   min-height: 708px;
+}
+
+#container {
+   margin-bottom: 3px;
+   height: 664px;
+   overflow: auto;
+   padding: 10px 10px 0 10px;
+   width: 968px;   
+}
+
+#content {
+   font-size: 14pt;
+   color: #AEF5EF;
+}
+
+#content .breadcrumb {
+   text-align: left;
+   margin: 0;
+   padding-bottom: 5px;
+}
+
+a {
+   color: #000080;
+}
+
+#content * {
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+#content p, #content blockquote, #content ul, #content ol {
+   margin-bottom: 16px;
+   line-height: 2.4ex;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+   font-weight: bold;
+   margin-bottom: 16px;
+   color: #4ECA65;
+   background-color: #AEF5EF;
+   padding: .2em;
+}
+
+#content h1 {
+   font-size: 18pt;
+}
+
+#content h2 {
+   font-size: 16pt;
+}
+
+#contentfooter {
+   margin-top: -3px;
+   color: #F14783;
+   background: #67CCC6;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+#contentfooter h1 {
+   font-size: 18pt;
+   text-align: center;
+}
+
+#contentfooter a {
+   color: #F14783;
+   text-decoration: none;
+}
+
+#contentfooter:hover {
+   background: #AEF5EF;
+}
+
+.inlineList li {
+   display: inline;
+}
+
+#mainImageDiv {
+   padding-top: 8px;
+   padding-bottom: 8px;
+   margin: 10px;
+   border-top: solid 2px #F14783;
+   border-bottom: solid 2px #F14783;
+}
+
+#imageList {
+   margin-left: 10px;
+   margin-right: 10px;
+   white-space: nowrap;
+   overflow-y: hidden;
+   overflow-x: scroll;
+   padding-bottom: 10px;
+}
+
+#imageList li {
+   display: inline-block;
+   padding: 5px;
+}
+
+#imageList li:hover {
+   background: #AEF5EF;
+}
+
+#imageList li.selected {
+   background: #AEF5EF;
+}
+
+#imageList li img {
+   vertical-align: middle;
+}
+
+table {
+   margin: 0 0 16px 0;
+}
+
+td {
+   padding: 0 5px 0 0;
+   vertical-align: top;
+}
+
+th {
+   padding: 0 5px 5px 0;
+}

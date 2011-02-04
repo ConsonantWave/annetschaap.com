@@ -1,0 +1,12 @@
+<% title "New Gallery" %>
+
+<% content_for :breadcrumb do %>
+&gt; <%= link_to @category.name, [:admin, @category] %>
+&gt; New Gallery
+<% end %>
+
+<% form_for [:admin, @category, @gallery], :html => { :multipart => true } do |f| %>
+  <%= render :partial => 'form', :object => f, :locals => { 
+      :licenses => @licenses,
+      :button_label => "Create" } %>
+<% end %>

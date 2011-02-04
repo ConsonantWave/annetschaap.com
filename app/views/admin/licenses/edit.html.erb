@@ -1,0 +1,10 @@
+<% title "Editing " + h(@license.name) %>
+
+<% content_for :breadcrumb do %>
+&gt; <%= link_to "Licenses", admin_licenses_url %> &gt; Editing <%= @license.name %> 
+<% end %>
+
+<% form_for([:admin, @license]) do |f| %>
+  <%= render :partial => 'form', :object => f, :locals => {
+      :button_label => "Update" } %>
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  category: 
+  name_en: MyString
+  name_nl: MyString
+  image_path_en: MyString
+  image_path_nl: MyString
+  description_en: MyText
+  description_nl: MyText
+
+two:
+  category: 
+  name_en: MyString
+  name_nl: MyString
+  image_path_en: MyString
+  image_path_nl: MyString
+  description_en: MyText
+  description_nl: MyText

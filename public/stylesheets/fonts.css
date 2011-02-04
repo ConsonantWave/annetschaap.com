@@ -1,0 +1,30 @@
+/*
+ * The fonts included are copyrighted by the vendor listed below.
+ * @vendor:     SIL International
+ * @vendorurl:  http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&cat_id=Home
+ * @licenseurl: http://www.fontsquirrel.com/license/Gentium-Basic
+ */
+
+@font-face {
+	font-family: 'GentiumBasicRegular';
+	src: url('/fonts/GenBasR.eot');
+	src: local('Gentium Basic Regular'), local('GentiumBasic'), url('/fonts/GenBasR.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'GentiumBasicItalic';
+	src: url('/fonts/GenBasI.eot');
+	src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url('/fonts/GenBasI.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'GentiumBasicBold';
+	src: url('/fonts/GenBasB.eot');
+	src: local('Gentium Basic Bold'), local('GentiumBasic-Bold'), url('/fonts/GenBasB.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'GentiumBasicBoldItalic';
+	src: url('/fonts/GenBasBI.eot');
+	src: local('Gentium Basic Bold Italic'), local('GentiumBasic-BoldItalic'), url('/fonts/GenBasBI.ttf') format('truetype');
+}

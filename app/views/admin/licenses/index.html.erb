@@ -1,0 +1,18 @@
+<% title "Available Licenses" %>
+
+<% content_for :breadcrumb do %>
+&gt; Licenses 
+<% end %>
+
+<ul>
+<% @licenses.each do |license| %>
+  <li>
+    <h2><%= license.name %></h2>
+    <p><%= parse_text license.description %></p>
+    <p>Downloadable: <%= license.downloadable.to_s %>
+    <p><%= link_to 'Edit', edit_admin_license_path(license) %> -
+    <%= link_to 'Delete', [:admin, license], :confirm => 'Are you sure?', :method => :delete %></p>
+  </li>
+<% end %>
+  <li><%= link_to 'New license', new_admin_license_path %></li>
+</ul>

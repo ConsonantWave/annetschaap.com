@@ -1,0 +1,10 @@
+<% title "Editing " + h(@category.name) %>
+
+<% content_for :breadcrumb do %>
+&gt; <%= link_to @category.name, [:admin, @category] %> &gt; Edit
+<% end %>
+
+<% form_for [:admin, @category], :html => { :multipart => true } do |f| %>
+  <%= render :partial => 'form', :object => f, :locals => {
+      :button_label => "Update" } %>
+<% end %>

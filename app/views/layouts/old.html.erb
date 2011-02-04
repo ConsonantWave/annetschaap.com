@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>annetschaap.com: <%= yield :title %></title>
+  <%= stylesheet_link_tag 'reset' %>
+  <%= stylesheet_link_tag 'fonts' %>
+  <%= stylesheet_link_tag 'annet' %>
+</head>
+<body>
+  <div id="bgwrapper">
+    <map name="bgmenu">
+      <area id="a_nederlands" shape="poly" coords="518,226,565,110,595,110,585,236" href="#" />
+      <area id="a_english" shape="poly" coords="604,166,639,111,732,133,732,153,650,150,638,221,609,217" href="#" />
+      <area id="a_blog" shape="poly" coords="97,108,157,89,275,114,174,169,86,171" href="/blog/" />
+      <area shape="poly" coords="389,328,494,328,565,428,565,520,396,573,373,512" onClick="showContent('portefolio', 'Portefolio')" />
+      
+      <area shape="poly" coords="46,349,114,331,221,367,221,387,146,387,126,480,83,480" onClick="showContent('francine-oomen', 'Francine Oomen')" />
+      <area shape="poly" coords="119,596,187,561,187,503,308,503,342,642,223,700,145,700" onClick="showContent('biografie', 'Biografie')" />
+      <area shape="poly" coords="477,661,498,585,587,585,643,617,614,703,527,703" onClick="showContent('schetsboek', 'Schetsboek')" />
+      <area shape="poly" coords="192,247,263,247,351,262,280,350,193,350" onClick="showContent('retrospective', 'Retrospective')" />
+      <area shape="poly" coords="642,376,717,361,812,378,710,584,650,584" onClick="showContent('mothers-journal', 'Mother\'s Journal')" />
+      <area shape="poly" coords="784,519,964,454,994,525,878,607,818,632,781,614" onClick="showContent('jacques-vriens', 'Jacques Vriens')" />
+      <area shape="poly" coords="638,293,698,263,730,664,342,664" onClick="showContent('contact', 'Contact')" />
+      <area shape="poly" coords="814,184,843,147,918,147,918,166,838,205" onClick="showContent('contact', 'Contact')" />
+    </map>
+    <%= image_tag "home_nl.jpg", :width => 1000, :height => 716, :usemap => "#bgmenu" %>
+  </div>
+  <div id="contentwrapper">
+    <div id="contentbox">
+      <div id="content">
+        <% if flash[:notice] %>
+        <h1><%= flash[:notice] %></h1>
+        <% end %>
+        <%= yield %>
+      </div>
+      <div id="loader">
+        <%= image_tag "loading.gif" %><%= image_tag "loading.gif" %><%= image_tag "loading.gif" %>
+      </div>
+      <div id="contentfooter" onClick="hideBox()">
+        <h1>Back to the front page</h1>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

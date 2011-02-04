@@ -1,0 +1,30 @@
+<% title h(@category.name) %>
+<% back_link "the front page", :controller => 'home' %>
+
+<% content_for :breadcrumb do %>
+&gt; <%=h @category.name %>
+<% end %>
+
+<% if @category.image.file? %>
+<p><%= image_tag @category.image.url,
+:alt => @category.name, :title => @category.name %></p>
+<% else %>
+<h1><%= @category.name %></h1>
+<% end %>
+
+<ul class="inlineList">
+  <% @category.galleries.each do |gallery| %>
+  <li><% if gallery.icon.file? %>
+    <%= link_to image_tag(gallery.icon.url,
+                            :alt => gallery.name,
+                            :title => gallery.name), gallery %>
+    <% else %>
+    <%= link_to gallery.name, gallery %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<div>
+  <%= parse_text @category.content %>
+</div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>annetschaap.com: Annet Schaap Illustrations</title>
+  <%= stylesheet_link_tag 'reset', 'fonts', 'annet' %>
+  <%= javascript_include_tag 'jquery', 'frontpage' %>
+</head>
+<body>
+  <div id="bgwrapper">
+    <map id="bgmenu" name="bgmenu">
+      <%= area_tag "Travel Journal", "http://blog.annetschaap.com/", "a_blog", "rect", "177,102,322,172", :target => "_blank" %>
+      <%= area_tag other_language_name(I18n.locale.to_s), locale_switch_uri, "a_lang", "poly", "594,193,594,222,639,225,636,314,703,316,703,296,786,293,786,258,745,244,715,188" %>
+      <%= category_area_tag @contact, "poly", "360,200,355,237,495,239,480,153,608,89,592,60,419,113,384,200" %>
+      <%= category_area_tag @francine, "poly", "84,246,126,379,258,367,263,269,366,281,373,244,254,214,149,223" %>
+      <%= category_area_tag @sketchbook, "poly", "214,394,226,513,327,518,345,415,415,419,410,375,285,370" %>
+      <%= category_area_tag @portfolio, "poly", "438,301,439,427,493,478,628,510,635,332,597,266" %>
+      <%= category_area_tag @retro, "poly", "55,541,75,593,125,584,153,677,209,676,221,584,284,595,300,535,176,510" %>
+      <%= category_area_tag @about, "poly", "373,523,351,669,439,697,547,697,615,513,472,485" %>
+      <%= category_area_tag @jacques, "poly", "734,343,763,436,792,436,807,454,903,412,972,339,933,269" %>
+      <%= category_area_tag @mom, "poly", "639,469,645,508,682,504,703,685,786,690,791,569,802,542,795,511,906,512,905,451,796,458,785,438,706,433,664,451" %>
+    </map>
+    <%= image_tag "home_en.jpg", :width => 1000, :height => 707, :usemap => "#bgmenu" %>
+    <div id="loginBox" class="floatingBox">
+      <% if current_admin %>
+        <p>Logged in as: <%= current_admin.login %> |
+        <%= link_to "Admin", :controller => "admin/home" %> |
+        <%= link_to "Log out", admin_session_path, :method => :delete,
+        :confirm => "Are you sure you want to log out?" %></p>
+      <% else %>
+        <div id="loginHidden">
+          <p>Admin Login</p>
+        </div>
+        <div id="loginShown">
+          <% form_for @admin_session, :url => admin_session_path do |f| %>
+          <p>Login: <%= f.text_field :login %>
+          Password: <%= f.password_field :password %>
+          <%= f.submit "Login" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div id="loader" class="floatingBox">
+      <p><%= image_tag "loading.gif" %>
+      <%= image_tag "loading.gif" %>
+      <%= image_tag "loading.gif" %></p>
+    </div>
+    <div id="contentwrapper">
+      <div id="contentbox">
+        <div id="container">
+          <div id="content">
+          </div>
+        </div>
+        <div id="contentfooter">
+          <h1>Back to the front page</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

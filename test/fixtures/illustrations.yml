@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  gallery: 
+  name_en: MyString
+  name_nl: MyString
+  comment_en: MyText
+  comment_nl: MyText
+  date: 1
+  license: 
+
+two:
+  gallery: 
+  name_en: MyString
+  name_nl: MyString
+  comment_en: MyText
+  comment_nl: MyText
+  date: 1
+  license: 

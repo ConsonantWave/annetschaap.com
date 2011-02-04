@@ -1,0 +1,15 @@
+<% title "Annet Schaap Illustrations -- Admin" %>
+
+<p><%= image_tag "header.gif", :width => 960, :height => 120 %></p>
+<h2>List of Categories:</h2>
+<ul>
+<% @categories.each do |category| %>
+  <li><%= link_to category.name, [:admin, category] %>
+  - <%= link_to "Edit", edit_admin_category_path(category) %>
+  - <%= link_to "Delete", [:admin, category], :method => "delete",
+    :confirm => "Are you sure you want to delete " + category.name + "?" %></li>
+<% end %>
+  <li><%= link_to "New Category", new_admin_category_path %></li>
+</ul>
+<p>Logged in as: <%= current_admin.login %> | <%= link_to "Main Site", :controller => "/home" %> |
+<%= link_to "Log out", admin_session_path, :method => :delete, :confirm => "Are you sure you want to log out?" %></p>

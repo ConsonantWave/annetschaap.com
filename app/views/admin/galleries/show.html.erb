@@ -1,0 +1,36 @@
+<% title h(@gallery.name) %>
+
+<% content_for :breadcrumb do %>
+&gt; <%= link_to @category.name, [:admin, @category] %>
+&gt; <%=h @gallery.name %>
+(<%= link_to 'Edit', edit_admin_gallery_path(@gallery) %>)
+<% end %>
+
+<p>
+  <%= image_tag @gallery.icon.url %>
+</p>
+
+<div>
+  <%= parse_text @gallery.description %>
+</div>
+
+<h2>List of illustrations:</h2>
+
+<ul>
+<% @illustrations.each do |ill| %>
+  <li>
+    <%= link_to image_tag(ill.image.url(:thumb)), [:admin, ill] %>
+    <%= link_to "Edit", edit_admin_illustration_path(ill) %>
+    - <%= link_to "Delete", [:admin, ill], :method => "delete",
+    :confirm => "Are you sure you want to delete " + ill.name + "?" %>
+  </li>
+<% end %>
+  <li><br />
+  <% form_for [:admin, @gallery, @illustration],
+    :html => { :multipart => true } do |f| %>
+    <%= f.label "Add Illustration:" %>
+    <%= f.file_field :image %>
+    <%= f.submit "Submit" %>
+  <% end %>
+  </li>
+</ul>

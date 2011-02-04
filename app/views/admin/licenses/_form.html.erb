@@ -1,0 +1,28 @@
+<p><%= form.error_messages %></p>
+
+<table>
+  <tr>
+    <th>Field</th>
+    <th>English</th>
+    <th>Dutch</th>
+  </tr>
+  <tr>
+    <td><%= form.label :name %></td>
+    <td><%= form.text_field :name_en %></td>
+    <td><%= form.text_field :name_nl %></td>
+  </tr>
+  <tr>
+    <td><%= form.label :downloadable %></td>
+    <td colspan="2"><%= form.check_box :downloadable %></td>
+  </tr>
+  <tr>
+    <td><%= form.label :description %></td>
+    <td><%= form.text_area :description_en %></td>
+    <td><%= form.text_area :description_nl %></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <%= form.submit button_label %>
+    </td>
+  </tr>
+</table>

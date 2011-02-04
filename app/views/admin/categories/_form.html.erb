@@ -1,0 +1,41 @@
+<p>The category or secondary page contains a selection of related galleries.</p>
+<p><%= form.error_messages %></p>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>English</th>
+    <th>Dutch</th>
+  </tr>
+  <tr>
+  <tr>
+    <td><%= form.label :name %></td>
+    <td><%= form.text_field :name_en %></td>
+    <td><%= form.text_field :name_nl %></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <br />
+      <p>The category's image should not contain any links to galleries or other things.
+      <br />Those will be handled elsewhere.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><%= form.label :image %></td>
+    <td><%= form.file_field :image_en %></td>
+    <td><%= form.file_field :image_nl %></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <br />
+      <%= render :partial => "admin/shared/parsing_help" %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= form.label :content %></td>
+    <td><%= form.text_area :content_en %></td>
+    <td><%= form.text_area :content_nl %></td>
+  </tr>
+  <tr>
+    <td colspan="3"><%= form.submit button_label %></td>
+  </tr>
+</table>
