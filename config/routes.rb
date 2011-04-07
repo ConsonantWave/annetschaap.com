@@ -57,6 +57,8 @@ ActionController::Routing::Routes.draw do |map|
       galleries.resources :illustrations
     end
   end
+
+  map.resources :contact_forms, :only => [:create]
   
   map.resource :admin_session  
   map.root :controller => "home"

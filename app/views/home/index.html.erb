@@ -24,6 +24,9 @@
     </map>
     <%= image_tag "home_en.jpg", :width => 1000, :height => 707, :usemap => "#bgmenu" %>
     <div id="loginBox" class="floatingBox">
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
       <% if current_admin %>
         <p>Logged in as: <%= current_admin.login %> |
         <%= link_to "Admin", :controller => "admin/home" %> |

@@ -11,3 +11,4 @@ public/stylesheets/compiled/
 public/system/*
 public/images/illustrations/
 tmp/restart.txt
+*.swp

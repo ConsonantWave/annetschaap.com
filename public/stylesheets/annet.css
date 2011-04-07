@@ -85,6 +85,8 @@ a {
    margin-right: auto;
 }
 
+#content textarea { text-align: left; }
+
 #content p, #content blockquote, #content ul, #content ol {
    margin-bottom: 16px;
    line-height: 2.4ex;

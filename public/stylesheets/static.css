@@ -29,6 +29,8 @@ body {
     margin-right: auto;
 }
 
+#content textarea { text-align: left; }
+
 #contentfooter {
    color: #F14783;
    background: #67CCC6;

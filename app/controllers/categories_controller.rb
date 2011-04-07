@@ -3,6 +3,8 @@ class CategoriesController < ApplicationController
   
   def show
     @category = Category.find(params[:id])
+    @is_contact = @category.name_en == "Contact"
+    @contact_form = ContactForm.new if @is_contact
 
     respond_to do |format|
       format.html # show.html.erb

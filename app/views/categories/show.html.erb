@@ -27,4 +27,10 @@
 
 <div>
   <%= parse_text @category.content %>
+  <% if @is_contact %>
+    <% form_for @contact_form do |f| %>
+      <p><%= f.text_area :content, :rows => 30, :cols => 80 %></p>
+      <p><%= f.submit 'Contact Us' %></p>
+    <% end %>
+  <% end %>
 </div>
